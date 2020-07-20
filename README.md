@@ -1,5 +1,5 @@
 # Cyborg
-  This Cyborg is an editor written in AngularJS, NodeJS.
+  This Cyborg is an editor written in AngularJS, NodeJS and embedded [ace.js](https://ace.c9.io/)
 
 ![alt text](https://github.com/mmt2597/cyborg/blob/master/dist/assets/images/workspace.png?raw=true)
 ![alt text](https://github.com/mmt2597/cyborg/blob/master/dist/assets/images/settings.png?raw=true)
