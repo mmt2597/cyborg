@@ -1,0 +1,24 @@
+// [Position, top, bottom, left, right]
+@mixin pos($pos, $t, $b, $l, $r) {
+  @if $pos == 'absolute' {
+    position: $pos;
+    top: $t;
+    left: $l;
+    right: $r;
+    bottom: $b;
+  }
+  @else {
+    position: $pos;
+    margin: $t $r $b $l;
+  }
+}
+
+
+// BORDER
+@mixin border($color, $t, $b, $l, $r) {
+    border-top: $t solid $color;
+    border-right: $r solid $color;
+    border-bottom: $b solid $color;
+    border-left: $l solid $color;
+}
+

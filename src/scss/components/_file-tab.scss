@@ -1,0 +1,85 @@
+.tabItem{
+  display: flex;
+  width: 100px;
+  min-width: 10px;
+}
+
+.file-tab-container {
+  cursor: pointer;
+  height: 55px;
+  z-index: 98;
+  display: flex;
+  padding-top: 15px;
+  flex-direction: row;
+  flex-flow:row nowrap;
+  background-color: #2e2e2e;
+}
+.div1 {
+  display: flex;
+  height: 40px;
+  width: 200px;
+  min-width: 100px;
+}
+
+.file-tab-content {
+  @include border(#623b3b, 1px, 0, 0, 1px);
+  box-sizing: border-box;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  height: 40px;
+  width: 200px;
+  min-width: 50px;
+  overflow: hidden;
+  margin-left: 10px;
+
+  &:first-child { margin-left: 0;}
+
+  span {
+      display: block;
+      padding: 5px 0;
+      font-size: 12px;
+      text-align: center;
+  }
+
+  i { font-size: 14px; }
+  .title-tab-container {
+    height: 40px;
+    width: 100%;
+
+  }
+
+  .close-tab {
+    visibility: hidden;
+    z-index: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #222;
+
+    :hover { color: #ccc;}
+  }
+
+  &:hover .close-tab { visibility: visible; }
+}
+
+.new-tab {
+  cursor: pointer;
+  margin-left: 2px;
+  height: 55px;
+  width: 60px;
+  z-index: 99;
+  padding: 0 10px;
+  background-color: #3b3636;
+  i {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px #fff;
+    margin-left: 10px;
+    margin-top: 8px;
+  }
+  :hover {
+    color: #ccc;
+  }
+}

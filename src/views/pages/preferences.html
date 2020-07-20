@@ -1,0 +1,145 @@
+<div class="pt-1"> <!-- Configuration container -->
+    <div class="m-auto container d-block preference-container">
+        <h4 class="mt-4 p-2">Preferences</h4>
+        <div class="mx-auto mt-2 p-4 d-block box-1">
+            <div class="row"> <!-- SELECTION THEME -->
+                <div class="col py-2">Choose Theme</div>
+                <div class="col">
+                  <div class="styled-select">
+                    <select class="form-control form-control-sm"
+                            ng-change="watchChangeTheme()"
+                            ng-model="config.name"
+                            ng-init="config.name = 'ambiance'"
+                            ng-options="config.name as config.name for config in listOfTheme">
+                    </select>
+                  </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row ">
+                <div class="col-6 d-flex "> <!-- FONT SIZE -->
+                    <div class="col-6 pl-0 py-2">Font Size</div>
+                    <div class="col-6 pl-0 input-range">
+                      <label class="labelName" for="fontsize">{{config.fontSize}}</label>
+                      <input class="input-range" ng-change="watchChangeFont()"
+                             ng-model="config.fontSize"
+                             ng-init="config.fontSize = 10"
+                             type="range"
+                             id="fontsize"
+                             value="{{config.fontSize}}"
+                             min="10"
+                             max="24" /> <small>px</small>
+                    </div>
+                </div>
+                <div class="col-6 d-flex flex-row">
+                    <div class="col-6 pl-5 py-1">Tab Size</div>
+                    <div class="col-6 pl-0 input-range">
+                      <label for="tabsize">{{config.tabSize}}</label>
+                      <input class="input-range" ng-change="watchChangeTabSize()"
+                             ng-model="config.tabSize"
+                             ng-init="config.tabSize = 3"
+                             id="tabsize"
+                             type="range"
+                             value="{{config.tabSize}}"
+                             min="3"
+                             max="14" /> <small>px</small>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row"> <!-- ROW 1 -->
+                <div class="col d-flex flex-row mr-5"> <!-- GUTTER -->
+                    <div class="col-6 pl-0 py-2">Show Gutter</div>
+                    <div class="col-6 pl-0 py-2 ">
+                        <div class="float-right slider-checkbox">
+                            <input type="checkbox"
+                                   value="None"
+                                   id="gutter"
+                                   ng-change="watchChangeGutter()"
+                                   ng-init="config.gutter = true"
+                                   ng-model="config.gutter";
+                                   checked />
+                            <label for="gutter"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex flex-row ml-5"> <!-- FOLD WIDGET -->
+                    <div class="col-6 pl-0 py-2">Fold Widget</div>
+                    <div class="col-6 pl-0 py-2">
+                        <div class="float-right slider-checkbox">
+                            <input type="checkbox"
+                                    value="None"
+                                    id="foldWidget"
+                                    ng-change="watchChangeFoldWidget()"
+                                    ng-init="config.foldWidget = true"
+                                    ng-model="config.foldWidget"/>
+                            <label for="foldWidget"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row"> <!-- ROW 2 -->
+                <div class="col d-flex flex-row mr-5"> <!-- Print Margin -->
+                    <div class="col-6 pl-0 py-2">Print Margin</div>
+                    <div class="col-6 pl-0 py-2 ">
+                        <div class="float-right slider-checkbox">
+                            <input type="checkbox"
+                                   value="None"
+                                   id="printMargin"
+                                   ng-change="watchChangePrintMargin()"
+                                   ng-init="config.printMargin = true"
+                                   ng-model="config.printMargin" />
+                            <label for="printMargin"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex flex-row ml-5"> <!-- Show Invisible -->
+                    <div class="col-6 pl-0 py-2">Show Invisible</div>
+                    <div class="col-6 pl-0 py-2">
+                        <div class="float-right slider-checkbox">
+                            <input type="checkbox"
+                                   value="None"
+                                   id="showInvisible"
+                                   ng-change="watchChangeShowInvisible()"
+                                   ng-init="config.showInvisible = false"
+                                   ng-model="config.showInvisible" />
+                            <label for="showInvisible"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row"> <!-- ROW 3 -->
+                <div class="col d-flex flex-row mr-5"> <!-- Word Wrap -->
+                    <div class="col-6 pl-0 py-2">Word Wrap</div>
+                    <div class="col-6 pl-0 py-2 ">
+                        <div class="float-right slider-checkbox">
+                            <input type="checkbox"
+                                   value="None"
+                                   id="wordWrap"
+                                   ng-change="watchChangeWordWrap()"
+                                   ng-init="config.wordWrap = false"
+                                   ng-model="config.wordWrap" />
+                            <label class="" for="wordWrap"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex flex-row ml-5"> <!-- FOLD WIDGET -->
+                    <div class="col-6 pl-0 py-2">Read only</div>
+                    <div class="col-6 pl-0 py-2">
+                        <div class="float-right slider-checkbox">
+                            <input type="checkbox"
+                                   value="None"
+                                   id="readOnly"
+                                   ng-change="watchChangeReadOnly()"
+                                   ng-init="config.readOnly = false"
+                                   ng-model="config.readOnly" />
+                            <label for="readOnly" ></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

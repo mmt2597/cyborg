@@ -1,0 +1,43 @@
+<div oncontextmenu="return false" ng-class="{resizeIt: tab.isSet(3)}" class="sidebar p-0 sub-tab-content">
+    <!-- TAB 1 FILE EXPLORER  -->
+    <div ng-show="tab.isSet(1)" class="file-explorer">
+        <div class="tab-name">
+          <h6 class="text-center mt-1">File Explorer</h6>
+        </div>
+        <div class="p-3 directories-container" ng-controller="treeViewController"> <!-- Directory container -->
+
+            <collection collection="treeDirectories"></collection>
+
+               <div ng-repeat="item in treeDirectories" id="menu" class="context_menu">
+                  <ul class="nav flex-column p-0">
+                    <li class="nav-item p-0">
+                      <a class="nav-link px-2 py-1" href>New File</a>
+                    </li>
+                    <li class="nav-item p-0">
+                      <a class="nav-link px-2 py-1" href>New Folder</a>
+                    </li>
+                    <li class="nav-item p-0">
+                      <a class="nav-link px-2 py-1" href>Rename</a>
+                    </li>
+                    <li ng-click="delete(item)" class="nav-item p-0">
+                      <a class="nav-link px-2 py-1" href>Delete</a>
+                    </li>
+                  </ul>
+                </div>
+
+        </div>
+     </div><!-- EOT Directory -->
+
+    <!-- TAB 2 SEARCH -->
+    <div ng-show="tab.isSet(2)" class="tab-search">
+        <div class="tab-name py-1">
+          <h6 class="text-center align-middle mt-2">Search</h6>
+        </div>
+    </div>
+
+    <!-- TAB 3 CONFIGURATION -->
+    <div ng-show="tab.isSet(3)" ng-controller="PreferenceController as theme" class="tab-config"  style="width: 845px !important; ">
+     
+      </div>
+    </div>
+</div> <!-- EOT SUB-TAB-CONTENT -->

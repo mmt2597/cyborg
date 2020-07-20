@@ -1,0 +1,15 @@
+.bgActive {
+  border-left: 1px solid #ffb921;
+  background-color: #262626 !important;
+
+  a.nav-link { color: #fff !important; }
+}
+
+.activeNode {
+  display: block;
+  background-color: red;
+}
+
+.activeTab { background-color: #222; }
+.d-none { display: none !important; }
+.resizeIt { width: 845px !important; }

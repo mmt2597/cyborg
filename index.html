@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cyborg</title>
+    <link rel="stylesheet" type="text/css" href="dist/assets/css/vendor.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/assets/css/main.css">
+  </head>
+<body ng-controller="mainController">
+<div  class="restrict-viewport hidden-lg-up">
+      <div class="middle">
+        <div class="inner">
+          <span class="icon ion-android-phone-portrait"></span>
+          <h1>Sorry, your screen size is not allowed</h1>
+        </div>
+      </div>
+</div>
+
+<div class="container-fluid p-0 d-flex flex-wrap flex-column" style="height: 100%: width: 100%" ng-controller="TabController as tab">
+      <div class="navb-header">
+        <nav-header style="height: 10%"></nav-header>
+      </div> <!-- 1ST ROW -->
+      <div class="sectoion-two d-flex flex-row"> <!-- 2ND ROW -->
+              <div class="left-nav"> <!-- 2 - 1 -->
+                  <nav class="nav flex-column navbar-inverse left-navbar bg-primary p-0">
+                      <div class="bootstrap-vertical-nav">
+                            <ul class="nav flex-column">
+                                <li ng-class="{bgActive: tab.isSet(1)}" class="nav-item" data-toggle="tooltip" data-placement="right" title="File Explorer">
+                                    <a href ng-click="tab.setTab(1)" class="nav-link">
+                                      <i class="icon ion-document"></i>
+                                    </a>
+                                </li>
+
+                                <li ng-class="{bgActive: tab.isSet(2)}" class="nav-item">
+                                    <a href ng-click="tab.setTab(2)" class="nav-link">
+                                      <i class="icon ion-search"></i>
+                                    </a>
+                                </li>
+                                <li ng-class="{bgActive: tab.isSet(3)}" class="nav-item">
+                                    <a href ng-click="tab.setTab(3) " class="nav-link">
+                                      <i class="icon ion-gear-b"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                      </div>
+                    </nav>
+              </div>
+
+              <div id="sub-content 2-x2"> <!-- 2 - 2 -->
+                <sub-content></sub-content>
+              </div>
+
+              <div class="2-3"> <!-- 2 - 3 -->
+                  <div class="sidebar-resizer"
+                          resizer="vertical"
+                          resizer-width="6"
+                          resizer-left=".sidebar"
+                          resizer-max="900"
+                          resizer-min="70">
+                  </div>
+              </div>
+
+              <div class="2-4 d-flex flex-column top-content" style="width: 100%; flex-flow: row nowrap">
+
+                                      <!-- FILE TAB -->
+                      <div class="d-flex" style="flex-direction: row; flex-flow:row nowrap;">
+                        <div class="file-tab-container flex-row" style="width: 100%;">
+                          <div class="div1" ng-repeat="tab in tabLength track by $index">
+                            <div class=" tabItem file-tab-content "> <!-- activeTab -->
+                                <div class="title-tab-container">
+                                    <span class="mt-1 title-tab">{{tab.name}}</span>
+                                </div>
+                                <div ng-click="closeTab($index)" class="float-right close-tab">
+                                    <i class="mt-1 d-block icon ion-close pull-right"></i>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div ng-click="addNewTab()" class="new-tab d-flex float-right" style="position: absolute; right: 0;">
+                            <i class="icon ion-plus"></i>
+                        </div>
+                      </div>
+
+
+
+                      <div id="editor" class="editor d-flex flex-row align-items-stretch" style="background-color: green; height: 77%;">
+                        <div class="ace-editor" style="height: 100%; width: 100%;" ng-controller="aceController" ui-ace="{ onLoad: aceLoaded }">function add (a, b) {
+  return a + b;
+}
+add(a, b);
+                        </div>
+                      </div>
+                      <div  class="content-resizer"
+                            resizer="horizontal"
+                            resizer-height="6"
+                            resizer-top=".editor"
+                            resizer-bottom=".console"
+                            resizer-Ymax="-47"
+                            resizer-Ymin="-46">
+                      </div>
+
+                      <div ng-hide="isVisible" class="console" style="height: auto">
+                        &nbsp;>
+                      </div>
+                      <div class="content-resizer" style="visibility: hidden; height: 100px;"></div>
+                       <div class="nav-footer">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                  <a class="btn " href ng-click="showHideConsole()">Console</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="btn" href ng-click="open('lg')">Hotkey</a>
+                                </li>
+                            </ul>
+                      </div>
+              </div> <!-- 2 - 4 -->
+      </div> <!-- 2ND ROW -->
+</div> <!-- MAIN CONTAINER -->
+
+
+
+<script type="text/javascript" src="dist/assets/js/vendor.js"></script>
+<script type="text/javascript" src="dist/assets/js/app.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"></script>
+</body>
+</html>

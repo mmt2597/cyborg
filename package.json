@@ -1,0 +1,37 @@
+{
+  "name": "ide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-uglifycss": "^1.0.8",
+    "gulp-webserver": "^0.9.1",
+    "node-bourbon": "^4.2.8"
+  },
+  "devDependencies": {
+    "angular-ace": "^1.0.4",
+    "angular-animate": "^1.6.4",
+    "angular-bootstrap-contextmenu": "^0.9.9",
+    "angular-ui-ace": "^0.2.3",
+    "angular-ui-bootstrap": "^2.5.0",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-sass": "^3.1.0"
+  }
+}

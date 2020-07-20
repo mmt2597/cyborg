@@ -1,0 +1,39 @@
+[{
+		"name": "GulpSrc",
+		"type": "folder",
+		"collapse": true,
+		"children": [{
+			"name": "CSS",
+			"type": "folder",
+			"collapse": false,
+			"children": [{
+					"name": "style1.css",
+					"type": "file"
+				},
+				{
+					"name": "style2.css",
+					"type": "file"
+				}
+			]
+		}]
+	},
+	{
+		"name": "SGulpSrc",
+		"type": "folder",
+		"collapse": true,
+		"children": [{
+			"name": "CSS",
+			"type": "folder",
+			"collapse": false,
+			"children": [{
+					"name": "style1.css",
+					"type": "file"
+				},
+				{
+					"name": "style2.css",
+					"type": "file"
+				}
+			]
+		}]
+	}
+]

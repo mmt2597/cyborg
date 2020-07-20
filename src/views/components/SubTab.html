@@ -1,0 +1,39 @@
+<div  ng-class="{resizeIt: tab.isSet(3)}" class="sidebar p-0 sub-tab-content">
+    <!-- TAB 1 FILE EXPLORER  -->
+    <div ng-controller="treeViewController" ng-show="tab.isSet(1)" class="file-explorer">
+      <div class="tab-name py-1">
+        <h6 class="text-center align-middle mt-2">File Explorer</h6>
+      </div>
+      <div class="tree-directory">
+
+          <script type="text/ng-template" id="treeDirectory">
+              <ul class="parent">
+                <li context-menu="menuOptions" ng-click="open = !open">
+                    <i ng-class="node.type == 'folder' ? 'folder' : 'file'"></i>{{ node.name }}
+                </li>
+              </ul>
+
+              <ul class="child" ng-show="open" ng-if="node.children">
+
+                  <li ng-repeat="node in node.children" ng-include="'treeDirectory'"></li>
+              </ul>
+          </script>
+          <ul class="asdasd">
+              <li ng-repeat="node in treeDirectories" ng-include="'treeDirectory'"></li>
+          </ul>
+      </div>
+    </div><!-- EOT Directory -->
+
+    <!-- TAB 2 SEARCH -->
+    <div ng-show="tab.isSet(2)" class="tab-search">
+        <div class="tab-name py-1">
+          <h6 class="text-center align-middle mt-2">Search</h6>
+        </div>
+    </div>
+
+    <!-- TAB 3 CONFIGURATION -->
+    <div ng-show="tab.isSet(3)" ng-controller="PreferenceController as config" class="tab-config"  style="width: 845px !important; ">
+        <div ng-include="'src/views/pages/preferences.html'"></div>
+    </div>
+
+</div> <!-- EOT SUB-TAB-CONTENT -->

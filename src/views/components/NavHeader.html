@@ -1,0 +1,177 @@
+<nav ng-controller="navbarController as nav" class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+  <a class="navbar-brand" href><img src="src/images/komodo-icon.png" class="icon"></a>
+
+  <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto d-flex">
+        <li uib-dropdown dropdown-append-to-body> <!-- DROPDOWN FILE TAB -->
+            <a class="nav-link" id="dropdown-file" href uib-dropdown-toggle>File</a>
+
+            <div class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+                 <a class="dropdown-item" href>Add File Library</a>
+                 <div class="dropdown-divider"></div>
+                 <a ng-click="nav.newFile()" class="dropdown-item" href>New File</a>
+                 <a ng-click="nav.newFolder()" class="dropdown-item" href>New Folder</a>
+                 <a class="dropdown-item" href>Open</a>
+                 <a class="dropdown-item" href>Delete
+                     <span class="float-lg-right"><i class="icon ion-social-windows pull-right"></i> + D</span>
+                 </a>
+                 <a class="dropdown-item" href>Add Project Folder</a>
+                 <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href>Save
+                    <span class="float-lg-right"><i class="icon ion-social-windows pull-right"></i> + S</span>
+                 </a>
+                 <a class="dropdown-item" href>Save as</a>
+                 <a class="dropdown-item" href>Publish</a>
+                 <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href>Close Tab</a>
+                 <a class="dropdown-item" href>Close Pane</a>
+                 <a class="dropdown-item" href>Close All Tabs</a>
+            </div>
+        </li> <!-- EOT FILE TAG -->
+
+        <li uib-dropdown dropdown-append-to-body> <!-- DROPDOWN EDIT TAB -->
+            <a class="nav-link" id="dropdown-file" href uib-dropdown-toggle>Edit</a>
+            <div class="dropdown-menu" uib-dropdown-menu aria-labelledby="dropdown-file">
+               <a class="dropdown-item" href>Undo</a>
+               <a class="dropdown-item" href>Redo</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Cut</a>
+               <a class="dropdown-item" href>Copy</a>
+               <a class="dropdown-item" href>Paste</a>
+               <a class="dropdown-item" href>Select All</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Toggle Comments</a>
+               <a class="dropdown-item" href>Lines</a>
+               <a class="dropdown-item" href>Text</a>
+               <a class="dropdown-item" href>Folding</a>
+               <a class="dropdown-item" href>Reflow Selection</a>
+               <a class="dropdown-item" href>Bookmark</a>
+               <a class="dropdown-item" href>Select Encoding</a>
+               <a class="dropdown-item" href>Go to Line</a>
+               <a class="dropdown-item" href>Select Grammar</a>
+            </div>
+        </li> <!-- EOT DROPDOWN EDIT TAB -->
+
+        <li uib-dropdown dropdown-append-to-body> <!-- DROPDOWN EDIT TAB -->
+              <a class="nav-link" id="dropdown-file" href uib-dropdown-toggle>Find</a>
+              <div class="dropdown-menu" uib-dropdown-menu aria-labelledby="dropdown-file">
+                  <a class="dropdown-item" href>Toggle Full Screen</a>
+                  <a class="dropdown-item" href>Panes</a>
+                  <a class="dropdown-item" href>Developer</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href>Increase Font Size</a>
+                  <a class="dropdown-item" href>Decrease Font Size</a>
+                  <a class="dropdown-item" href>Reset Font Size</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" onclick="toggleWrap()" href ng-click="toggleWrap()">Toggle Soft Wrap</a>
+                  <a class="dropdown-item" href>Toggle Command Palette</a>
+                  <a class="dropdown-item" href>Toggle Tree View</a>
+              </div>
+        </li> <!-- EOT DROPDOWN EDIT TAB -->
+
+        <li uib-dropdown dropdown-append-to-body> <!-- DROPDOWN EDIT TAB -->
+              <a class="nav-link" id="dropdown-file" href uib-dropdown-toggle>View</a>
+              <div class="dropdown-menu" uib-dropdown-menu aria-labelledby="dropdown-file">
+                  <a class="dropdown-item" href>Toggle Full Screen</a>
+                  <a class="dropdown-item" href>Panes</a>
+                  <a class="dropdown-item" href>Developer</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href>Increase Font Size</a>
+                  <a class="dropdown-item" href>Decrease Font Size</a>
+                  <a class="dropdown-item" href>Reset Font Size</a>
+                  <div class="dropdown-divider"></div>
+                    <!-- <button type="button" ng-click="toggleWrap()" name="button">C</button> -->
+                  <a class="dropdown-item" href ng-click="toggleWrap()">Toggle Soft Wrap</a>
+                  <a class="dropdown-item" href>Toggle Command Palette</a>
+                  <a class="dropdown-item" href>Toggle Tree View</a>
+              </div>
+        </li> <!-- EOT DROPDOWN EDIT TAB -->
+
+        <li uib-dropdown dropdown-append-to-body> <!-- DROPDOWN GOTO TAB -->
+            <a class="nav-link" id="dropdown-file" href uib-dropdown-toggle>Goto</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown-file">
+               <a class="dropdown-item" href>Toggle Full Screen</a>
+               <a class="dropdown-item" href>Panes</a>
+               <a class="dropdown-item" href>Developer</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Increase Font Size</a>
+               <a class="dropdown-item" href>Decrease Font Size</a>
+               <a class="dropdown-item" href>Reset Font Size</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Toggle Soft Wrap</a>
+               <a class="dropdown-item" href>Toggle Command Palette</a>
+               <a class="dropdown-item" href>Toggle Tree View</a>
+            </div>
+        </li>
+
+        <li uib-dropdown dropdown-append-to-body> <!-- DROPDOWN RUN TAB -->
+            <a class="nav-link" id="dropdown-file" href uib-dropdown-toggle>Run</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown-file">
+               <a class="dropdown-item" href>Toggle Full Screen</a>
+               <a class="dropdown-item" href>Panes</a>
+               <a class="dropdown-item" href>Developer</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Increase Font Size</a>
+               <a class="dropdown-item" href>Decrease Font Size</a>
+               <a class="dropdown-item" href>Reset Font Size</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Toggle Soft Wrap</a>
+               <a class="dropdown-item" href>Toggle Command Palette</a>
+               <a class="dropdown-item" href>Toggle Tree View</a>
+            </div>
+        </li>
+
+        <li uib-dropdown dropdown-append-to-body> <!-- DROPDOWN TOOLS TAB -->
+            <a class="nav-link" id="dropdown-file" href uib-dropdown-toggle>Tools</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown-file">
+               <a class="dropdown-item" href>Toggle Full Screen</a>
+               <a class="dropdown-item" href>Panes</a>
+               <a class="dropdown-item" href>Developer</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Increase Font Size</a>
+               <a class="dropdown-item" href>Decrease Font Size</a>
+               <a class="dropdown-item" href>Reset Font Size</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Toggle Soft Wrap</a>
+               <a class="dropdown-item" href>Toggle Command Palette</a>
+               <a class="dropdown-item" href>Toggle Tree View</a>
+            </div>
+        </li>
+
+        <li uib-dropdown dropdown-append-to-body> <!-- DROPDOWN WINDOW TAB -->
+            <a class="nav-link" id="dropdown-file" href uib-dropdown-toggle>Window</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown-file">
+               <a class="dropdown-item" href>Toggle Full Screen</a>
+               <a class="dropdown-item" href>Panes</a>
+               <a class="dropdown-item" href>Developer</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Increase Font Size</a>
+               <a class="dropdown-item" href>Decrease Font Size</a>
+               <a class="dropdown-item" href>Reset Font Size</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Toggle Soft Wrap</a>
+               <a class="dropdown-item" href>Toggle Command Palette</a>
+               <a class="dropdown-item" href>Toggle Tree View</a>
+            </div>
+        </li>
+
+        <li uib-dropdown dropdown-append-to-body> <!-- DROPDOWN HELP TAB -->
+            <a class="nav-link" id="dropdown-file" href uib-dropdown-toggle>Help</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown-file">
+               <a class="dropdown-item" href>Toggle Full Screen</a>
+               <a class="dropdown-item" href>Panes</a>
+               <a class="dropdown-item" href>Developer</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Increase Font Size</a>
+               <a class="dropdown-item" href>Decrease Font Size</a>
+               <a class="dropdown-item" href>Reset Font Size</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href>Toggle Soft Wrap</a>
+               <a class="dropdown-item" href>Toggle Command Palette</a>
+               <a class="dropdown-item" href>Toggle Tree View</a>
+            </div>
+        </li>
+      </ul>
+  </div>
+
+</nav>

@@ -1,0 +1,90 @@
+#editor {
+  width: 100%;
+  position: relative;
+}
+
+.nav-footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  width: 100%;
+  padding: 0 5px;
+  border-top: 1px solid #3E3E3F;
+
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  line-height: 1;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  white-space: nowrap;
+
+  color: #999;
+  background: #2e2e2e;
+
+  .nav {
+    padding: 0 !important;
+  }
+  .nav-item {
+    margin-left: 10px;
+
+    a.btn {
+      padding: 4px 10px !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+
+      font-size: 10px;
+      font-weight: bold;
+
+      background-color: #000;
+      color: #fff !important;
+    }
+
+    a.btn:hover {
+        font-size: 10px;
+        color: #262626 !important;
+    }
+  }
+}
+
+.console {
+  position: relative;
+  height: 300px;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+
+  background-color: #000;
+}
+
+
+
+ /* VERTICAL SCROLL BAR */
+.ace_scrollbar-v,
+.ace_scrollbar-h { overflow: scroll; }
+
+.ace_scollbar-v {
+  position: absolute !important;
+  width: 7px !important;
+}
+
+.ace_scrollbar-h {
+  bottom: 0 !important;
+  width: auto !important;
+  height: 6px !important;
+}
+
+.ace_scrollbar-v::-webkit-scrollbar { width: 7px; }
+.ace_scrollbar-h::-webkit-scrollbar { height: 7px; }
+
+.ace_scrollbar-v::-webkit-scrollbar-thumb,
+.ace_scrollbar-h::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5);
+	background-color: #555;
+}
+
+.ace_gutter { color: #757070 !important; }

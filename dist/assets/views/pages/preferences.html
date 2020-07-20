@@ -1,0 +1,35 @@
+<div class="pt-1"> <!-- Configuration container -->
+  <div class="m-auto container d-block preference-container">
+        <h4 class="mt-4 p-2">Preferences</h4>
+        <div class="mx-auto mt-2 p-4 d-block box-1">
+            <div class="row"> <!-- SELECTION THEME -->
+                <div class="col py-2">Select Theme</div>
+                <div class="col">
+                  <div class="styled-select">
+                    <select class="form-control form-control-sm"
+                            ng-change="watchChangeTheme()"
+                            ng-model="theme.name"
+                            ng-init="theme.name = 'ambiance'"
+                            ng-options="theme.name as theme.name for theme in listOfTheme">
+                    </select>
+                  </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col d-flex flex-row mr-5"> <!-- FONT SIZE -->
+                    <div class="col-6 pl-0 py-2">Font Size</div>
+                    <div class="col-6 pl-0 input-range">
+                      <input type="range" value="20" min="10" max="24">
+                    </div>
+                </div>
+                <div class="col d-flex flex-row ml-5"> <!-- TAB SIZE -->
+                    <div class="col-6 pl-0 py-2">Tab Size</div>
+                    <div class="col-6 pl-0">
+                      <input type="range" value="16" min="10" max="24">
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>

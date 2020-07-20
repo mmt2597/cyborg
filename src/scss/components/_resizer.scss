@@ -1,0 +1,26 @@
+
+/* Horizontal Resizer */
+.sidebar-resizer {
+  position: relative;
+  z-index: 99;
+  width: 17px;
+  height: 100vh;
+  padding: 1px solid #2e2e2e;
+  background-color: #2e2e2e;
+  cursor: e-resize;
+}
+
+/* Vertical Resizer */
+.content-resizer {
+  position: relative;
+  display: block;
+  margin-top: 0;
+  z-index: 999;
+  
+  border-bottom: 1px solid black;
+  box-shadow: 0 0 1px black;
+  height: 17px;
+
+  background: #2e2e2e;
+  cursor: row-resize;
+}
