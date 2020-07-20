@@ -10,7 +10,7 @@
   
 # Installation
   * Clone repository locally
-  * Ensure you have installed [Node.js](https://nodejs.org/en/) and npm on your system else run ```npm install -g```
+  * Ensure you have installed [Node.js](https://nodejs.org/en/)
   * Run ```npm install``` to install all dependencies
   * Run ```gulp```
 # Or
